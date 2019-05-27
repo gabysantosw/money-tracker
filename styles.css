@@ -1,0 +1,99 @@
+html, body {
+  margin: 0;
+  font-size: 10px; }
+
+p {
+  margin: 0; }
+
+.t-main {
+  font-family: sans-serif; }
+
+.t-output {
+  font-size: 2.4rem;
+  font-weight: bold; }
+
+.t-button {
+  font-size: 1.6rem;
+  font-weight: bold; }
+
+.button {
+  height: 46px;
+  box-sizing: border-box;
+  padding: 8px 16px;
+  border: none;
+  color: #29313d; }
+  .button:hover {
+    cursor: pointer;
+    opacity: .8; }
+
+.button-income {
+  background-color: #46b976; }
+
+.button-service {
+  background-color: #4d99e6; }
+
+.button-expense {
+  background-color: #a3b0c2; }
+
+.body {
+  background-color: #f0f2f5; }
+
+.main {
+  min-height: 100vh; }
+
+.logs {
+  padding: 16px;
+  display: flex;
+  flex-direction: column; }
+
+.log {
+  display: flex; }
+
+.log-left {
+  background-color: white;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 4px;
+  flex-grow: 1;
+  border-color: #46b976; }
+
+.display {
+  width: 100%;
+  height: 106px;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: white;
+  position: fixed;
+  bottom: 0; }
+
+.display__output {
+  display: flex;
+  justify-content: space-between;
+  position: relative; }
+  .display__output:before {
+    width: 100px;
+    height: 10px;
+    display: block;
+    background-color: #46b976;
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+.control {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex; }
+
+.control__income {
+  border-top-right-radius: 8px; }
+
+.control__service {
+  margin: 0 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px; }
+
+.control__expense {
+  border-top-left-radius: 8px;
+  text-align: right;
+  flex-grow: 1; }

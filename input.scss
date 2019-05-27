@@ -1,0 +1,165 @@
+// RESETS
+html, body {
+  margin: 0;
+  font-size: 10px;
+}
+
+p {
+  margin: 0;
+}
+
+// INCLUDES
+
+// COLORS
+$l-bg: hsl(215, 20%, 95%);
+$light: hsl(215, 0%, 100%);
+$dark: hsl(215, 20%, 20%);
+$gray: hsl(215, 20%, 70%);
+$blue: hsl(210, 75%, 60%);
+$green: hsl(145, 45%, 50%);
+$red: hsl(0, 90%, 70%);
+
+// SPACING
+$x-2: 4px;
+$x1: 8px;
+$x2: 16px;
+$touch-h: 46px;
+
+// FONTS
+$sans: sans-serif;
+
+// TYPOGRAPHY
+.t-main {
+  font-family: $sans;
+}
+
+.t-description {
+
+}
+
+.t-date {
+
+}
+
+.t-tag {
+
+}
+
+.t-amount {
+
+}
+
+.t-output {
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+.t-button {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+// UTILITIES
+.button {
+  height: $touch-h;
+  box-sizing: border-box;
+  padding: $x1 $x2;
+  border: none;
+  color: $dark;
+  &:hover {
+    cursor: pointer;
+    opacity: .8;
+  }
+}
+
+.button-income {
+  background-color: $green;
+}
+
+.button-service {
+  background-color: $blue;
+}
+
+.button-expense {
+  background-color: $gray;
+}
+
+// BASIC
+.body {
+  background-color: $l-bg;
+}
+
+.main {
+  min-height: 100vh;
+}
+
+.logs {
+  padding: $x2;
+  display: flex;
+  flex-direction: column;
+}
+
+.log {
+  display: flex;
+}
+
+.log-left {
+  background-color: $light;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: $x-2;
+  flex-grow: 1;
+  //
+  border-color: $green;
+}
+
+
+
+.display {
+  width: 100%;
+  height: 60px + $touch-h;
+  box-sizing: border-box;
+  padding: $x2;
+  background-color: $light;
+  position: fixed;
+  bottom: 0;
+}
+
+.display__output {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  //
+  &:before {
+    width: 100px;
+    height: 10px;
+    display: block;
+    background-color: $green;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.control {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+}
+
+.control__income {
+  border-top-right-radius: $x1;
+}
+
+.control__service {
+  margin: 0 $x1;
+  border-top-left-radius: $x1;
+  border-top-right-radius: $x1;
+}
+
+.control__expense {
+  border-top-left-radius: $x1;
+  text-align: right;
+  flex-grow: 1;
+}
