@@ -18,8 +18,18 @@ $gray: hsl(215, 20%, 70%);
 $blue: hsl(210, 75%, 60%);
 $green: hsl(145, 45%, 50%);
 $red: hsl(0, 90%, 70%);
+$l-gray: hsl(215, 20%, 76%);
+$l-blue: hsl(210, 75%, 76%);
+$l-green: hsl(145, 45%, 65%);
+$l-red: hsl(0, 90%, 70%);
+$d-gray: hsl(215, 20%, 35%);
+
+// EFFECTS
+$top: 0 .5rem 1rem .2rem $dark;
+$bottom: 0 .5rem 1rem -.7rem $dark;
 
 // SPACING
+$x-3: 2px;
 $x-2: 4px;
 $x1: 8px;
 $x2: 16px;
@@ -34,19 +44,22 @@ $sans: sans-serif;
 }
 
 .t-description {
-
+  font-size: 1.6rem;
+  font-weight: bold;
 }
 
 .t-date {
-
+  font-family: monospace;
+  font-size: 1.2rem;
 }
 
 .t-tag {
-
+  font-size: 1.4rem;
 }
 
 .t-amount {
-
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
 .t-output {
@@ -66,6 +79,7 @@ $sans: sans-serif;
   padding: $x1 $x2;
   border: none;
   color: $dark;
+  // box-shadow: $top;
   &:hover {
     cursor: pointer;
     opacity: .8;
@@ -73,18 +87,19 @@ $sans: sans-serif;
 }
 
 .button-income {
-  background-color: $green;
+  background-color: $l-green;
 }
 
 .button-service {
-  background-color: $blue;
+  background-color: $l-blue;
 }
 
 .button-expense {
-  background-color: $gray;
+  background-color: $l-gray;
 }
 
 // BASIC
+// STARTIN SCREEN
 .body {
   background-color: $l-bg;
 }
@@ -101,19 +116,51 @@ $sans: sans-serif;
 
 .log {
   display: flex;
+  border-radius: $x2;
+  box-shadow: $bottom;
 }
 
+
 .log-left {
+  flex-grow: 1;
+  padding: $x1;
+  border-radius: $x1 0 0 $x1;
   background-color: $light;
+  display: flex;
+  align-items: baseline;
+  position: relative;
+  z-index: 1;
+  // to change dinamically
   border-width: 3px;
   border-style: solid;
-  border-radius: $x-2;
-  flex-grow: 1;
-  //
   border-color: $green;
 }
 
+.log__date {
+  color: $d-gray;
+  margin: 0 $x1;
+  position: relative;
+  top: -1px;
+}
 
+.log__tag {
+  padding: $x-3 $x1;
+  border-top-left-radius: $x1;
+  background-color: $l-green;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.log-right {
+  padding: $x1;
+  border-radius: 0 $x1 $x1 0;
+  display: flex;
+  align-items: center;
+
+  // to change dinamically
+  background-color: $l-green;
+}
 
 .display {
   width: 100%;
@@ -123,43 +170,49 @@ $sans: sans-serif;
   background-color: $light;
   position: fixed;
   bottom: 0;
+  box-shadow: $top;
 }
 
 .display__output {
+  padding: 0 $x1;
   display: flex;
   justify-content: space-between;
   position: relative;
-  //
-  &:before {
-    width: 100px;
-    height: 10px;
+  // to change dinamically
+  &::before {
+    content: '';
+    width: 100%;
+    height: $x1;
+    background-color: $l-green;
     display: block;
-    background-color: $green;
     position: absolute;
-    top: 0;
+    top: 20px;
     left: 0;
+    z-index: -1;
   }
 }
 
 .control {
   width: 100%;
+  display: flex;
   position: fixed;
   bottom: 0;
-  display: flex;
 }
 
 .control__income {
-  border-top-right-radius: $x1;
+  border-top-right-radius: $x2;
 }
 
 .control__service {
   margin: 0 $x1;
-  border-top-left-radius: $x1;
-  border-top-right-radius: $x1;
+  border-top-left-radius: $x2;
+  border-top-right-radius: $x2;
 }
 
 .control__expense {
-  border-top-left-radius: $x1;
+  border-top-left-radius: $x2;
   text-align: right;
   flex-grow: 1;
 }
+
+// MODALS

@@ -13,13 +13,13 @@
 
       <div class="log">
         <div class="log-left">
-          <p class="log__description">Lorem</p>
-          <p class="log__date">01/01/01</p>
-          <div class="log__tag">asdf</div>
+          <p class="log__description t-description">Lorem</p>
+          <p class="log__date t-date">- 01/01/01</p>
+          <div class="log__tag t-tag">asdf</div>
         </div>
 
         <div class="log-right">
-          <p class="log__amount">+1050€</p>
+          <p class="log__amount t-amount">+1050€</p>
         </div>
       </div>
 
@@ -40,5 +40,17 @@
       <button class="control__expense button-expense button t-button">Expense</button>
     </section>
   </main>
+
+  <section class="income-modal">
+    <h2>Add Income</h2>
+    <label for="income-description">Description</label>
+    <input id="income-description" type="text">
+    <label for="income-amount">Amount</label>
+    <input id="income-amount" type="number">
+    <input id="income-is-monthly" type="checkbox">
+    <label for="income-is-monthly">Mensual</label>
+    <button>Add</button>
+  </section>
+
 </body>
 </html>
