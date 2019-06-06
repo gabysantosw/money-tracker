@@ -4,7 +4,7 @@ html, body {
   font-size: 10px;
 }
 
-p {
+p, h2 {
   margin: 0;
 }
 
@@ -20,7 +20,7 @@ $green: hsl(145, 45%, 50%);
 $red: hsl(0, 90%, 70%);
 $l-gray: hsl(215, 20%, 76%);
 $l-blue: hsl(210, 75%, 76%);
-$l-green: hsl(145, 45%, 65%);
+$l-green: hsl(145, 45%, 75%);
 $l-red: hsl(0, 90%, 70%);
 $d-gray: hsl(215, 20%, 35%);
 
@@ -33,13 +33,15 @@ $x-3: 2px;
 $x-2: 4px;
 $x1: 8px;
 $x2: 16px;
+$x3: 32px;
+$x4: 48px;
 $touch-h: 46px;
 
 // FONTS
 $sans: sans-serif;
 
 // TYPOGRAPHY
-.t-main {
+.t-body {
   font-family: $sans;
 }
 
@@ -68,6 +70,11 @@ $sans: sans-serif;
 }
 
 .t-button {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.t-heading {
   font-size: 1.6rem;
   font-weight: bold;
 }
@@ -118,6 +125,10 @@ $sans: sans-serif;
   display: flex;
   border-radius: $x2;
   box-shadow: $bottom;
+
+  &:not(:last-child) {
+    margin-bottom: $x2;
+  }
 }
 
 
@@ -130,10 +141,18 @@ $sans: sans-serif;
   align-items: baseline;
   position: relative;
   z-index: 1;
-  // to change dinamically
   border-width: 3px;
   border-style: solid;
-  border-color: $green;
+
+  &-green {
+    border-color: $green;
+  }
+  &-blue {
+    border-color: $blue;
+  }
+  &-gray {
+    border-color: $d-gray;
+  }
 }
 
 .log__date {
@@ -146,10 +165,19 @@ $sans: sans-serif;
 .log__tag {
   padding: $x-3 $x1;
   border-top-left-radius: $x1;
-  background-color: $l-green;
   position: absolute;
   right: 0;
   bottom: 0;
+
+  &-green {
+    background-color: $l-green;
+  }
+  &-blue {
+    background-color: $l-blue;
+  }
+  &-gray {
+    background-color: $l-gray;
+  }
 }
 
 .log-right {
@@ -158,8 +186,15 @@ $sans: sans-serif;
   display: flex;
   align-items: center;
 
-  // to change dinamically
-  background-color: $l-green;
+  &-green {
+    background-color: $l-green;
+  }
+  &-blue {
+    background-color: $l-blue;
+  }
+  &-gray {
+    background-color: $l-gray;
+  }
 }
 
 .display {
@@ -216,3 +251,98 @@ $sans: sans-serif;
 }
 
 // MODALS
+
+.modal {
+  &::before {
+    content: '';
+    background-color: $dark;
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: .9;
+    z-index: 1;
+  }
+
+  &-back-button {
+    border-top-right-radius: $x2;
+    background-color: $gray;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+}
+
+.modal-content {
+  background-color: $light;
+  border-radius: $x2;
+  position: fixed;
+  bottom: 80px;
+  left: 5%;
+  right: 5%;
+  opacity: .9;
+  z-index: 1;
+  border-width: 3px;
+  border-style: solid;
+
+  &-green {
+    border-color: $green;
+    background-image: linear-gradient(to bottom, $l-green $x3, transparent $x3);
+
+    .modal__heading {
+
+    }
+
+    .modal__form {
+      &-button {
+        background-color: $l-green;
+      }
+    }
+  }
+  &-blue {
+    border-color: $blue;
+  }
+  &-gray {
+    border-color: $d-gray;
+  }
+}
+
+.modal__heading {
+  height: $x3;
+  box-sizing: border-box;
+  padding: $x1;
+}
+
+.modal__form {
+  padding: $x1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-section {
+    display: flex;
+    align-items: center;
+  }
+
+  &-input-label {
+    margin-bottom: $x1;
+  }
+  &-input {
+    margin-bottom: $x2;
+  }
+  &-checkbox {
+
+  }
+  &-checkbox-label {
+    margin-left: $x1;
+  }
+  &-button {
+    border-radius: $x2 0 12px 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}

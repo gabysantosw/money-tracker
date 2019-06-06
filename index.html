@@ -7,18 +7,42 @@
   <title>Expense tracker</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="body">
-  <main class="main t-main">
+<body class="body t-body">
+  <main class="main">
     <section class="logs">
 
       <div class="log">
-        <div class="log-left">
+        <div class="log-left log-left-green">
           <p class="log__description t-description">Lorem</p>
           <p class="log__date t-date">- 01/01/01</p>
-          <div class="log__tag t-tag">asdf</div>
+          <div class="log__tag log__tag-green t-tag">asdf</div>
         </div>
 
-        <div class="log-right">
+        <div class="log-right log-right-green">
+          <p class="log__amount t-amount">+1050€</p>
+        </div>
+      </div>
+
+      <div class="log">
+        <div class="log-left log-left-blue">
+          <p class="log__description t-description">Lorem</p>
+          <p class="log__date t-date">- 01/01/01</p>
+          <div class="log__tag log__tag-blue t-tag">asdf</div>
+        </div>
+
+        <div class="log-right log-right-blue">
+          <p class="log__amount t-amount">+1050€</p>
+        </div>
+      </div>
+
+      <div class="log">
+        <div class="log-left log-left-gray">
+          <p class="log__description t-description">Lorem</p>
+          <p class="log__date t-date">- 01/01/01</p>
+          <div class="log__tag log__tag-gray t-tag">asdf</div>
+        </div>
+
+        <div class="log-right log-right-gray">
           <p class="log__amount t-amount">+1050€</p>
         </div>
       </div>
@@ -41,15 +65,24 @@
     </section>
   </main>
 
-  <section class="income-modal">
-    <h2>Add Income</h2>
-    <label for="income-description">Description</label>
-    <input id="income-description" type="text">
-    <label for="income-amount">Amount</label>
-    <input id="income-amount" type="number">
-    <input id="income-is-monthly" type="checkbox">
-    <label for="income-is-monthly">Mensual</label>
-    <button>Add</button>
+  <section class="modal modal-income">
+    <div class="modal-content modal-content-green">
+      <h2 class="modal__heading t-heading">Add Income</h2>
+      <form class="modal__form">
+        <label class="modal__form-input-label" for="income-description">Description</label>
+        <input class="modal__form-input" id="income-description" type="text">
+        <label class="modal__form-input-label" for="income-amount">Amount</label>
+        <input class="modal__form-input" id="income-amount" type="number">
+        <div class="modal__form-section">
+          <input class="modal__form-checkbox" id="income-is-monthly" type="checkbox">
+          <label class="modal__form-checkbox-label" for="income-is-monthly">Mensual</label>
+        </div>
+        <button class="modal__form-button button t-button">Add</button>
+      </form>
+    </div>
+    <button class="modal-back-button button t-button">
+      Back
+    </button>
   </section>
 
 </body>
